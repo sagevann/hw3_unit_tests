@@ -1,20 +1,27 @@
-test.tx_examples <- function()
+#test assumptions and criteria taken from:
+#https://d396qusza40orc.cloudfront.net/rprog%2Fdoc%2FProgAssignment3.pdf
+
+test.heart_attack_examples <- function()
 {
-  checkEquals(best('tx','heart attack'), best('TX', 'heart attack'))
-  checkEquals(best('tx','heart attack'), "CYPRESS FAIRBANKS MEDICAL CENTER")
-  checkEquals(best('tx','heart failure'), "FORT DUNCAN MEDICAL CENTER")
-  
+  #prove the upcasing works commented out as this was a feature not required
+  #in the assignment
+  #checkEquals(best('tx','heart attack'), best('TX', 'heart attack'))
+  checkEquals(best('TX','heart attack'), "CYPRESS FAIRBANKS MEDICAL CENTER")
+  checkEquals(best("MD", "heart attack"), "JOHNS HOPKINS HOSPITAL, THE")
 }
 
-test.md_examples <- function()
+test.heart_failure_examples <- function()
 {
-  checkEquals(best("MD", "heart attack"), "JOHNS HOPKINS HOSPITAL, THE")
-  checkEquals(best("MD", "pneumonia"), "GREATER BALTIMORE MEDICAL CENTER")
-  
+  checkEquals(best('TX','heart failure'), "FORT DUNCAN MEDICAL CENTER")
 }
+
+test.pneumonia_examples <- function()
+{
+  checkEquals(best("MD", "pneumonia"), "GREATER BALTIMORE MEDICAL CENTER")
+}
+
 test.error_examples <- function()
 {
   checkException(best("BB", "heart attack"), 'invalid state')
   checkException(best("NY", "hert attack"), 'invalid outcome')
-  
 }
