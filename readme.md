@@ -11,8 +11,8 @@ This is a work in progress, but all the 'best.R' code works:
 ## Usage instructions
 1. Clone this repo into the same directory as your best.R file
 2. Load up RStudio, install RUnit by typing: 
-``` 
-install.packages('RUnit')
-```
+ ``` 
+ install.packages('RUnit')
+ ```
 3. Run the tests like so
-``` source('run_tests.R') ```
+ ``` source('run_tests.R') ```
