@@ -1,5 +1,6 @@
 #test assumptions and criteria taken from:
 #https://d396qusza40orc.cloudfront.net/rprog%2Fdoc%2FProgAssignment3.pdf
+source('best.R')
 
 test.heart_attack_examples <- function()
 {
